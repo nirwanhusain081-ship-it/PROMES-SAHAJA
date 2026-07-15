@@ -1,0 +1,8 @@
+{
+  "name": "PROMES SAHAJA",
+  "description": "Aplikasi Penyusun Program Semester (PROMES) Otomatis Kurikulum Merdeka untuk PAUD, SD, dan SMP secara cepat, stabil, dan siap cetak.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
