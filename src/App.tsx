@@ -59,24 +59,17 @@ export default function App() {
     e.preventDefault();
     setIsLoggingIn(true);
     setLoginError("");
-    try {
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: loginUsername, password: loginPassword })
-      });
-      const data = await res.json();
-      if (data.success) {
+    
+    // Simulate API delay
+    setTimeout(() => {
+      if (loginUsername === "admin" && loginPassword === "admin123") {
         setIsAuthenticated(true);
         localStorage.setItem("promes_auth", "true");
       } else {
-        setLoginError(data.message || "Username atau password salah");
+        setLoginError("Username atau password salah");
       }
-    } catch (err) {
-      setLoginError("Terjadi kesalahan sistem");
-    } finally {
       setIsLoggingIn(false);
-    }
+    }, 600);
   };
 
   const handleLogout = () => {
